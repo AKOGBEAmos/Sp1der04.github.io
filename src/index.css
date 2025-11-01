@@ -1,3 +1,420 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Timeline and skills styles */
+.skills-grid-new {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skills-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cybersecurity-skills h3,
+.technical-stack h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark .cybersecurity-skills h3,
+.dark .technical-stack h3 {
+  color: #f1f5f9;
+}
+
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-name {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.dark .skill-name {
+  color: #d1d5db;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-level {
+  height: 100%;
+  background-color: #22c55e;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.technical-stack .stack-category {
+  margin-bottom: 1.5rem;
+}
+
+.technical-stack h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.dark .technical-stack h4 {
+  color: #e5e7eb;
+}
+
+.technical-stack span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border-radius: 5px;
+  margin: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.dark .technical-stack span {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+/* Service and Project cards */
+.service-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #22c55e;
+}
+
+.service-icon {
+  color: #22c55e;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .tech-tag {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.project-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #22c55e;
+}
+
+/* Dark mode specific styles */
+.dark .service-card,
+.dark .project-card {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+:root {
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --primary-color: #10B981;
+  --secondary-color: #6B7280;
+  --text-color-dark: #9CA3AF;
+  --border-color: #374151;
+  --card-bg: #111827;
+}
+
+/* --- Global: Section Subtitle --- */
+.section-subtitle {
+    text-align: center;
+    font-family: var(--font-mono);
+    color: var(--text-color-dark);
+    margin-top: -3.5rem;
+    margin-bottom: 4rem;
+}
+
+/* --- 4. Professional Experience --- */
+.experience {
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The vertical timeline line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--primary-color);
+    opacity: 0.3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* The timeline dot */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--card-bg);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-content-left,
+.timeline-content-right {
+    width: 45%;
+}
+
+.company-card,
+.job-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.company-card {
+    text-align: right;
+}
+
+.company-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.company-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.company-card p {
+    color: var(--text-color-dark);
+    font-family: var(--font-mono);
+}
+
+.job-card .job-title {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.job-card .job-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-color-dark);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.job-card .job-description {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-card .job-description li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.job-card .job-description li::before {
+    content: '>';
+    font-family: var(--font-mono);
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Alternating layout */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .company-card {
+    text-align: left;
+}
+
+/* --- 5. Technical Skills --- */
+.skills-grid-new {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.cybersecurity-skills h3,
+.technical-stack h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-family: var(--font-mono);
+}
+
+.cybersecurity-skills h3 i,
+.technical-stack h3 i {
+    margin-right: 0.75rem;
+}
+
+/* Skill progress bars */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item .skill-name {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #0A0A0A;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-level {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Right column: Technical Stack */
+.technical-stack {
+    border-left: 1px solid var(--border-color);
+    padding-left: 3rem;
+}
+
+.stack-category {
+    margin-bottom: 1.5rem;
+}
+
+.stack-category h4 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.stack-category span {
+    display: inline-block;
+    background: #0A0A0A;
+    color: var(--text-color-dark);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+/* --- 6. Certifications --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.cert-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.cert-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+    font-family: var(--font-mono);
+    color: var(--text-color-dark);
+    font-size: 0.9rem;
+}
+
+.cert-card.pursuit i {
+    color: var(--text-color-dark);
+}
+
+.cert-card.pursuit:hover {
+    border-color: var(--secondary-color);
+}
+
+.cert-card.pursuit:hover i {
+    color: var(--secondary-color);
+}

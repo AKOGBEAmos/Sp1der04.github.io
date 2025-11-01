@@ -62,7 +62,7 @@ const Nav: React.FC = () => {
     >
       <Navbar.Brand href="/">
         <img 
-          src="./assets/images/w4lk3r.png" 
+          src="./assets/images/w4lk3r.jpg" 
           className={`mr-3 transition-all duration-300 ${
             isScrolled ? 'h-5 sm:h-7' : 'h-6 sm:h-9'
           }`} 
@@ -87,7 +87,7 @@ const Nav: React.FC = () => {
           View CV
         </a>
         <a
-        href="https://github.com/Sp1der04"
+        href="https://github.com/AKOGBEAmos"
         target="_blank"
         rel="noopener noreferrer"
         className={`hidden md:flex mx-3 bg-gray-800 hover:bg-gray-900 py-2 px-4 transition-all duration-300 flex items-center gap-2 ${
@@ -107,7 +107,7 @@ const Nav: React.FC = () => {
             clipRule="evenodd"
           />
         </svg>
-        <span className="text-white font-medium">FREE Download</span>
+
       </a>
         <button
           type="button"
