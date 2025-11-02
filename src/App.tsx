@@ -2,6 +2,7 @@
 import React from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Education from "./components/Education";
 import "/public/assets/css/particles.css"; 
 
 const App: React.FC = () => {
@@ -94,17 +95,7 @@ const App: React.FC = () => {
                 >
                   Download Full CV
                 </a>
-                <div className="mt-6">
-                  <h3 className="text-2xl font-bold dark:text-white">Education</h3>
-                  <ul className="mt-3 text-lg text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    <li>Master of Science in Information Technology (August 2025 – May 2027)</li>
-                    <li>Carnegie Mellon University, Africa</li>
-                    <li>Concentration: Cybersecurity, Cyber Threat Intelligence, and DFIR</li>
-                    <li>Bachelor of Information Technology Security (GPA: 3.7/4)</li>
-                    <li>University of Abomey-Calavi, Abomey-Calavi, Benin</li>
-                    <li>Concentration: Information Technology, Cybersecurity, and Information Security</li>
-                  </ul>
-                </div>
+                <Education />
               </div>
             </div>
             <div className="lg:col-span-7">
@@ -209,6 +200,7 @@ const App: React.FC = () => {
                       <div className="stack-category">
                         <h4>Programming</h4>
                         <span>Python</span>
+                        <span>C & C++</span>
                         <span>KQL</span>
                         <span>Bash</span>
                         <span>PowerShell</span>
