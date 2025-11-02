@@ -62,7 +62,7 @@ export default defineConfig({
           return `assets/${path.basename(normalizedName)}`
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js'
+        entryFileNames: 'assets/js/main.js'
       }
     }
   },
